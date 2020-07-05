@@ -1,0 +1,16 @@
+<h1 class='text-center mb-3'>{{title}}</h1>
+
+<p class='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo nam, repellat accusamus tenetur
+    illum eos nihil at quam
+    veniam odit?</p>
+
+<h4>Members</h4>
+<ul class='list-group'>
+    {{#if members}} {{!-- If statement --}}
+    {{#each members}} {{!-- foreach statement --}}
+    <li class='list-group-item'>{{this.name}} : {{this.email}}</li>
+    {{/each}}
+    {{/if}}
+</ul>
+
+<a href="/api/members" class="btn btn-light mt-4">Visit API</a>
