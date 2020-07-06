@@ -17,6 +17,14 @@ const app = express()
 //     //res.sendFile(path.join(__dirname, 'public', 'index.html'))
 // })
 
+/*
+    res.send
+    res.json
+    res.redirect
+    res.render
+    res.get
+*/
+
 //init middleware
 app.use(logger)
 //Body Parser Middleware
