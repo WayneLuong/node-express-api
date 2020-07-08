@@ -17,14 +17,6 @@ const app = express()
 //     //res.sendFile(path.join(__dirname, 'public', 'index.html'))
 // })
 
-/*
-    res.send
-    res.json
-    res.redirect
-    res.render
-    res.get
-*/
-
 //init middleware
 app.use(logger)
 //Body Parser Middleware
@@ -59,3 +51,28 @@ app.use('/api/members', require('./routes/api/members'));
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => console.log(` Server started on PORT ${PORT}`))
+
+
+/*
+    res.send([body]) - send string/object/array/buffer
+    res.json() - return json data
+    res.redirect('/about') - redirect to a page
+    res.render(index) - send the rendered view to the client e.g. index.html
+        // if a callback is specified, the rendered HTML string has to be sent explicitly
+        res.render('index', function (err, html) {
+          res.send(html)
+        })
+    res.status(404)
+    res.get('Content-Type') - Returns the HTTP response header specified by field. The match is case-insensitive. // => "text/plain"
+    res.set('Content-Type', 'text/html')
+    res.type('.html')
+    res.end - end without sending response
+*/
+/*
+    req.body
+    res.params - if you have the route /user/:name, then the “name” property is available as req.params.name
+    req.query.q //GET /search?q=tobi+ferret // => 'tobi ferret'
+    req.path // => '/users' // example.com/users?sort=desc
+    req.get('Content-Type') // => "text/plain"
+
+*/
